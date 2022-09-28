@@ -24,7 +24,7 @@ export SEP2="]"
 # Import the modules
 #. "$DIR/bar-functions/dwm_alarm.sh"
 . "$DIR/bar-functions/dwm_alsa.sh"
-. "$DIR/bar-functions/dwm_backlight.sh"
+#. "$DIR/bar-functions/dwm_backlight.sh"
 . "$DIR/bar-functions/dwm_battery.sh"
 #. "$DIR/bar-functions/dwm_ccurse.sh"
 #. "$DIR/bar-functions/dwm_cmus.sh"
@@ -50,7 +50,7 @@ parallelize() {
         printf "Running parallel processes\n"
         dwm_networkmanager &
         #dwm_weather &
-        sleep 5
+        sleep 0.2
     done
 }
 parallelize &
@@ -80,7 +80,7 @@ do
     #upperbar="$upperbar$(dwm_transmission)"
     # upperbar="$upperbar$(dwm_vpn)"
     upperbar="$upperbar$(dwm_alsa)"
-    upperbar="$upperbar$(dwm_backlight)"
+    #upperbar="$upperbar$(dwm_backlight)"
     upperbar="$upperbar$(dwm_battery)"
     upperbar="$upperbar${__DWM_BAR_NETWORKMANAGER__}"
 
@@ -93,5 +93,5 @@ do
     xsetroot -name "$upperbar"
     # Uncomment the line below to enable the lowerbar 
     #xsetroot -name "$upperbar;$lowerbar"
-    sleep 5
+    sleep 0.2
 done
